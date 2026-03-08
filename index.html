@@ -1,12 +1,3 @@
-ich möchte eine option anbieten die website zwischen deutsch und englisch umzuschalten 14:04 8 Dateien angesehen, hat einen Befehl ausgeführt Jetzt habe ich einen guten Überblick. Ich werde die Datei kopieren und eine vollständige DE/EN-Umschaltung implementieren.
-Copy file to working directory Jetzt füge ich den Sprachwechsler ein. Ich werde: Einen DE/EN-Toggle-Button in die Nav einfügen Alle deutschen Texte mit data-de/data-en Attributen versehen Das JS für die Umschaltung ergänzen 2 Dateien bearbeitet Now add
-data-de / data-en attributes to all translatable elements and the JS translation logic: 21 Dateien bearbeitet, hat eine Datei angesehen Now add the JavaScript translation logic before the closing </script> tag: Add language switching JS before closing
-script tag Now also update the form submit JS to use translated strings: Update handleFormSubmit to use translated button text Also update the form success message: Add data attributes to form success message Now copy to output: Hat einen Befehl ausgeführt,
-datei lesen Fertig! Hier ist was ich eingebaut habe: DE / EN Toggle-Button in der Navigation (zwischen den Links und dem Hamburger-Menü), im gleichen Monospace-Stil wie die restliche Nav. Die aktive Sprache wird gold hervorgehoben. Übersetzte Inhalte:
-Hero-Tag, Beschreibungstext, Badge Navigationslinks (Kontakt / Contact) Abschnittsüberschriften (Ausgewählte Projekte / Über mich) Filter-Tabs (Alle / All) About-Fließtexte und Stat-Labels Kontaktformular: alle Labels, Platzhalter, Select-Optionen, Buttons
-Footer (Claim, Links, Copyright) Overlay-Zurück-Button & Erfolgsmeldung Die gewählte Sprache wird in localStorage gespeichert, sodass sie beim Seitenreload erhalten bleibt. Index Code · HTML Claude ist eine KI und kann Fehler machen. Bitte überprüfe die
-Antworten. Index · HTML Syntaxhervorhebung wurde aufgrund der Codegröße deaktiviert.
-
 <!DOCTYPE html>
 <html lang="de">
 
@@ -3923,6 +3914,8 @@ Antworten. Index · HTML Syntaxhervorhebung wurde aufgrund der Codegröße deakt
             filtered.forEach((p, i) => {
                         const num = String(i + 1).padStart(3, '0');
                         const firstImg = p.bilder && p.bilder[0] ? p.bilder[0] : null;
+                        const label = currentLang === 'en' && p.catLabel_en ? p.catLabel_en : p.catLabel;
+                        const title = currentLang === 'en' && p.titel_en ? p.titel_en : p.titel;
 
                         const row = document.createElement('div');
                         row.className = 'work-row reveal';
@@ -3930,15 +3923,15 @@ Antworten. Index · HTML Syntaxhervorhebung wurde aufgrund der Codegröße deakt
                         row.innerHTML = `
       <span class="work-idx">${num}</span>
       <div class="work-info">
-        <p class="work-cat">${p.catLabel}</p>
-        <h3 class="work-title">${p.titel}</h3>
+        <p class="work-cat">${label}</p>
+        <h3 class="work-title">${title}</h3>
       </div>
       <span class="work-year">${p.jahr}</span>
       <div class="work-arrow">→</div>
       <div class="work-thumb">
         ${firstImg
-          ? `<img src="${firstImg}" alt="${p.titel}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--border-hard)">${p.titel.slice(0,2).toUpperCase()}</div>`
-          : `<span style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem">${p.titel.slice(0,2).toUpperCase()}</span>`
+          ? `<img src="${firstImg}" alt="${title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--border-hard)">${title.slice(0,2).toUpperCase()}</div>`
+          : `<span style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem">${title.slice(0,2).toUpperCase()}</span>`
         }
       </div>
     `;
@@ -3960,8 +3953,15 @@ function openOverlay(id) {
   const p = PROJEKTE.find(x => x.id === id);
   if (!p) return;
 
+  const isEn = currentLang === 'en';
+  const title   = isEn && p.titel_en   ? p.titel_en   : p.titel;
+  const label   = isEn && p.catLabel_en ? p.catLabel_en : p.catLabel;
+  const beschr  = isEn && p.beschr_en  ? p.beschr_en  : p.beschr;
+  const details = isEn && p.details_en ? p.details_en  : p.details;
+  const tags    = isEn && p.tags_en    ? p.tags_en     : p.tags;
+
   // Breadcrumb
-  document.getElementById('overlay-breadcrumb').textContent = `Works / ${p.titel}`;
+  document.getElementById('overlay-breadcrumb').textContent = `Works / ${title}`;
 
   // Hero image
   const heroImg = document.getElementById('overlay-hero-img');
@@ -3969,37 +3969,37 @@ function openOverlay(id) {
   const coverSrc = p.cover || (p.bilder && p.bilder[0]);
   if (coverSrc) {
     heroImg.src = coverSrc;
-    heroImg.alt = p.titel;
+    heroImg.alt = title;
     heroImg.style.display = 'block';
     heroPlaceholder.style.display = 'none';
     heroImg.onerror = () => {
       heroImg.style.display = 'none';
       heroPlaceholder.style.display = 'flex';
-      heroPlaceholder.textContent = p.titel.slice(0, 2).toUpperCase();
+      heroPlaceholder.textContent = title.slice(0, 2).toUpperCase();
     };
   } else {
     heroImg.style.display = 'none';
     heroPlaceholder.style.display = 'flex';
-    heroPlaceholder.textContent = p.titel.slice(0, 2).toUpperCase();
+    heroPlaceholder.textContent = title.slice(0, 2).toUpperCase();
   }
-  document.getElementById('overlay-hero-badge').textContent = p.catLabel;
+  document.getElementById('overlay-hero-badge').textContent = label;
 
   // Header
-  document.getElementById('overlay-cat').textContent = p.catLabel;
-  document.getElementById('overlay-title').textContent = p.titel;
+  document.getElementById('overlay-cat').textContent = label;
+  document.getElementById('overlay-title').textContent = title;
   document.getElementById('overlay-year').textContent = p.jahr;
 
   // Tags
   const tagsEl = document.getElementById('overlay-tags');
-  tagsEl.innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+  tagsEl.innerHTML = tags.map(t => `<span class="tag">${t}</span>`).join('');
 
   // Description
   const descEl = document.getElementById('overlay-desc');
-  descEl.innerHTML = p.beschr.map(para => `<p>${para}</p>`).join('');
+  descEl.innerHTML = beschr.map(para => `<p>${para}</p>`).join('');
 
   // Sidebar
   const sideEl = document.getElementById('overlay-sidebar');
-  sideEl.innerHTML = Object.entries(p.details).map(([k, v]) => `
+  sideEl.innerHTML = Object.entries(details).map(([k, v]) => `
     <div class="sidebar-block">
       <div class="sidebar-label">${k}</div>
       <div class="sidebar-val">${v}</div>
@@ -4202,6 +4202,12 @@ function applyLang() {
     const val = opt.getAttribute('data-' + currentLang);
     if (val !== null) opt.textContent = val;
   });
+  // Re-render works list in new language (if already loaded)
+  if (PROJEKTE.length > 0) {
+    const activeTab = document.querySelector('.cat-tab.active');
+    const activeCat = activeTab ? activeTab.getAttribute('onclick').match(/'([^']+)'/)?.[1] || 'all' : 'all';
+    renderWorks(activeCat);
+  }
 }
 
 // Init on load
