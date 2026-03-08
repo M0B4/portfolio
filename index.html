@@ -62,7 +62,6 @@
             font-family: 'Barlow Condensed', sans-serif;
             font-weight: 400;
             overflow-x: hidden;
-            cursor: none;
         }
         
         body::before {
@@ -73,33 +72,6 @@
             opacity: 0.025;
             pointer-events: none;
             z-index: 9000;
-        }
-        
-        .cursor {
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            transition: transform 0.1s;
-        }
-        
-        .cursor-ring {
-            width: 28px;
-            height: 28px;
-            border: 1px solid rgba(201, 168, 76, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
         /* NAV */
         
@@ -604,7 +576,6 @@
             border: 1px solid var(--border);
             background: var(--surface);
             transition: background 0.2s, border-color 0.2s;
-            cursor: none;
             position: relative;
             overflow: hidden;
         }
@@ -969,7 +940,6 @@
             font-size: 1.1rem;
             letter-spacing: 0.12em;
             transition: background 0.2s, transform 0.15s;
-            cursor: none;
         }
         
         .btn-primary:hover {
@@ -989,7 +959,6 @@
             font-size: 1.1rem;
             letter-spacing: 0.12em;
             transition: background 0.2s, border-color 0.2s;
-            cursor: none;
         }
         
         .btn-ghost:hover {
@@ -1080,7 +1049,6 @@
             background: none;
             border: 1px solid var(--border-hard);
             padding: 8px 20px;
-            cursor: none;
             transition: all 0.2s;
             display: flex;
             align-items: center;
@@ -1278,7 +1246,6 @@
             aspect-ratio: 4/3;
             background: var(--surface);
             overflow: hidden;
-            cursor: none;
             position: relative;
             border: 1px solid var(--border);
         }
@@ -1340,7 +1307,6 @@
             background: none;
             border: 1px solid var(--border-hard);
             padding: 8px 16px;
-            cursor: none;
             transition: all 0.2s;
         }
         
@@ -1361,7 +1327,6 @@
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            cursor: none;
             font-size: 1.2rem;
             transition: border-color 0.2s, background 0.2s;
         }
@@ -2175,8 +2140,6 @@
 <body>
     <a href="#works" class="skip-link">Zum Inhalt springen</a>
 
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="ring"></div>
 
     <!-- ==================== PROJEKT-DATEN ====================
      Hier trägst du deine Projekte ein.
@@ -3887,26 +3850,6 @@
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // ── Custom Cursor ──────────────────────────────────────────
-        const cur = document.getElementById('cursor');
-        const rin = document.getElementById('ring');
-        let mx = 0,
-            my = 0,
-            rx = 0,
-            ry = 0;
-        document.addEventListener('mousemove', e => {
-            mx = e.clientX;
-            my = e.clientY;
-            cur.style.left = mx + 'px';
-            cur.style.top = my + 'px';
-        });
-        (function loop() {
-            rx += (mx - rx) * 0.12;
-            ry += (my - ry) * 0.12;
-            rin.style.left = rx + 'px';
-            rin.style.top = ry + 'px';
-            requestAnimationFrame(loop);
-        })();
-
         // ── Scroll Reveal ──────────────────────────────────────────
         const obs = new IntersectionObserver(
             es => es.forEach(e => {
