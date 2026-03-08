@@ -1,0 +1,171 @@
+[{
+        "id": "wacken-2024",
+        "titel": "Wacken Identity 2024",
+        "cat": "festival",
+        "jahr": "2024",
+        "catLabel": "Festival · Branding",
+        "tags": [
+            "Branding",
+            "Print",
+            "Signage"
+        ],
+        "kurz": "Komplette Visual Identity für das Wacken Open Air 2024",
+        "beschr": [
+            "Für das <strong>Wacken Open Air 2024</strong> wurde eine durchgehende visuelle Identität entwickelt – von den ersten Ankündigungs-Flyern bis hin zu Bühnenbackdrops und Merchandise.",
+            "Das Designsystem basiert auf einer reduzierten Palette aus Schwarz, Stahl und Gold, kombiniert mit einer eigens angepassten Lettering-Variante für Headlines. Ziel war es, die rohe Energie des Festivals in klare, druckfähige Grafik zu übersetzen.",
+            "Gesamtumfang: <strong>Poster, Programmheft, Wristband-Design, Bühnenplane, Social-Media-Templates</strong> und Leitsystemgrafiken für das Festivalgelände."
+        ],
+        "details": {
+            "Kunde": "Wacken Open Air",
+            "Umfang": "Full Identity",
+            "Format": "Print + Digital",
+            "Tools": "Illustrator, InDesign, Photoshop"
+        },
+        "bilder": [
+            "bilder/wacken-1.jpg",
+            "bilder/wacken-2.jpg",
+            "bilder/wacken-3.jpg"
+        ]
+    },
+    {
+        "id": "band-merch",
+        "titel": "Band Merch Collection",
+        "cat": "metal",
+        "jahr": "2024",
+        "catLabel": "Metal · Merchandise",
+        "tags": [
+            "Merchandise",
+            "Siebdruck",
+            "Apparel"
+        ],
+        "kurz": "T-Shirt- und Merchandising-Kollektion für eine Metal-Band",
+        "beschr": [
+            "Eine vollständige <strong>Merchandise-Kollektion</strong> für eine deutsche Metal-Band – entwickelt für Tour, Webshop und Festivalstand.",
+            "Neben dem Haupt-Artwork für das Tour-Shirt entstanden Varianten für Hoodies, Caps und Patches. Alle Designs wurden für den Siebdruck optimiert: bis zu 4 Farben, hoher Kontrast, auch auf dunklen Textilien lesbar.",
+            "Besonderes Augenmerk lag auf der <strong>Haltbarkeit der Motive</strong> nach vielen Waschgängen und der Erkennbarkeit auf kleinem Merchandise wie Schlüsselanhängern."
+        ],
+        "details": {
+            "Kunde": "Auf Anfrage",
+            "Umfang": "10 Designs",
+            "Format": "Siebdruck-ready",
+            "Tools": "Illustrator, Photoshop"
+        },
+        "bilder": [
+            "bilder/merch-1.jpg",
+            "bilder/merch-2.jpg"
+        ]
+    },
+    {
+        "id": "stage-visual",
+        "titel": "Stage Visual Konzept",
+        "cat": "festival",
+        "jahr": "2023",
+        "catLabel": "Festival · Stage Design",
+        "tags": [
+            "Stage Design",
+            "Motion",
+            "Projektion"
+        ],
+        "kurz": "Bühnengrafik und Projektionskonzept für ein Open-Air-Festival",
+        "beschr": [
+            "Entwicklung eines <strong>Bühnenbild-Konzepts</strong> für eine Festival-Hauptbühne: Backdrop-Grafik, LED-Wall-Layouts und animierte Übergänge zwischen Acts.",
+            "Das Konzept vereint statische Druckgrafiken (Bühnenverkleidung, Seitenflügel) mit einem animierten Loop-System für die LED-Wand – exportiert als ProRes-Dateien für den Live-Einsatz.",
+            "Besonderheit: Alle Animationen wurden so konzipiert, dass das Bühnenbild <strong>auch ohne LED-Wall</strong> als rein physisches Set funktioniert."
+        ],
+        "details": {
+            "Kunde": "Festival (NDA)",
+            "Umfang": "Konzept + Umsetzung",
+            "Format": "Print + Video",
+            "Tools": "After Effects, Illustrator, Cinema 4D"
+        },
+        "bilder": [
+            "bilder/stage-1.jpg",
+            "bilder/stage-2.jpg",
+            "bilder/stage-3.jpg"
+        ]
+    },
+    {
+        "id": "dive-mount",
+        "titel": "Dive Equipment Mount",
+        "cat": "3d",
+        "jahr": "2024",
+        "catLabel": "3D Print · Tauchsport",
+        "tags": [
+            "3D Druck",
+            "PETG",
+            "Tauchsport"
+        ],
+        "kurz": "Kamerahalterung für Taucher, wenn der Markt kein passendes Teil liefert",
+        "beschr": [
+            "Eine <strong>universelle Kamerahalterung für Taucher</strong>, entwickelt weil kein Serienteil die benötigte Kombination aus Kamera, Lampe und Computer-Arm bietet.",
+            "Material: PETG mit 40% Infill – druckfest bis 30m Tiefe, seewasserbeständig, keine Metallteile die rosten. Der Arm ist modular aufgebaut: Einzelne Segmente lassen sich tauschen oder verlängern.",
+            "Nach <strong>3 Iterationen und Freitauchgängen bis 18m</strong> ist die aktuelle Version seit einem Jahr im Einsatz. CAD-Dateien auf Anfrage erhältlich."
+        ],
+        "details": {
+            "Material": "PETG / ASA",
+            "Tiefe getestet": "bis 30m",
+            "Iterationen": "3 Versionen",
+            "Tools": "Fusion 360, PrusaSlicer"
+        },
+        "bilder": [
+            "bilder/dive-mount-1.jpg",
+            "bilder/dive-mount-2.jpg"
+        ]
+    },
+    {
+        "id": "regulator-halterung",
+        "titel": "Regulator Halterung Prototyp",
+        "cat": "3d",
+        "jahr": "2023",
+        "catLabel": "3D Print · Custom Parts",
+        "tags": [
+            "Prototyping",
+            "TPU",
+            "Adapter"
+        ],
+        "kurz": "Flexibler Adapter für nicht-standardisierte Regulator-Schläuche",
+        "beschr": [
+            "Für einen Tauchclub entstand ein <strong>flexibler Halteradapter</strong> für Regulator-Schläuche älterer Bauart – Teile, die kein Hersteller mehr im Katalog hat.",
+            "Gedruckt in <strong>TPU (Shore 95A)</strong> für Flexibilität unter Wasserdruck. Die Form wurde aus Original-Schläuchen abgegossen und dann in CAD rekonstruiert – Toleranz: ±0.2mm.",
+            "Das Teil ist im Tauchclub seit über einem Jahr im aktiven Einsatz. Günstiger als jedes Sonderteil vom Hersteller, reparierbar in unter 2 Stunden."
+        ],
+        "details": {
+            "Material": "TPU Shore 95A",
+            "Tiefe getestet": "bis 25m",
+            "Stückzahl": "12 Exemplare",
+            "Tools": "Fusion 360, Bambu Studio"
+        },
+        "bilder": [
+            "bilder/regulator-1.jpg"
+        ]
+    },
+    {
+        "id": "plakatserie",
+        "titel": "Konzert Plakatserie",
+        "cat": "metal",
+        "jahr": "2023",
+        "catLabel": "Metal · Poster Design",
+        "tags": [
+            "Poster",
+            "Typografie",
+            "Siebdruck"
+        ],
+        "kurz": "Siebgedruckte Konzertplakate im Risograph-Stil",
+        "beschr": [
+            "Eine Serie von <strong>6 Konzertplakaten</strong> für eine Reihe lokaler Metal-Shows – gedruckt im Zweifarb-Siebdruck auf 120g Kraftpapier.",
+            "Jedes Plakat hat ein eigenständiges Motiv, folgt aber einem gemeinsamen typografischen System. Der Stil orientiert sich an klassischen <strong>70er-Jahre-Konzertplatten</strong> und modernem Risograph-Druck – handgemacht wirkend, aber präzise konstruiert.",
+            "Auflage je Plakat: 50 Stück. Einige Motive sind mittlerweile vergriffen und tauchen auf Discogs auf."
+        ],
+        "details": {
+            "Auflage": "50 Stück / Motiv",
+            "Druck": "Zweifarb-Siebdruck",
+            "Format": "A2, Hochformat",
+            "Tools": "Illustrator, Photoshop"
+        },
+        "bilder": [
+            "bilder/plakat-1.jpg",
+            "bilder/plakat-2.jpg",
+            "bilder/plakat-3.jpg"
+        ]
+    }
+]
