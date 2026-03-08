@@ -8,29 +8,31 @@
         "catLabel_en": "Festival · Merchandise",
         "tags": ["Apparel", "Print", "Social Media", "Merchandise"],
         "tags_en": ["Apparel", "Print", "Social Media", "Merchandise"],
-        "kurz": "Shirts, Grafiken und mehr für Wacken Open Air und verwandte Veranstaltungen",
+        "kurz": "Shirts, Grafiken und mehr fürs Wacken Open Air und verwandte Veranstaltungen",
         "kurz_en": "Shirts, graphics and more for Wacken Open Air and related events",
         "beschr": [
-            "Seit 2025 gestalte ich <strong>Merchandise und Grafiken für das Wacken Open Air</strong> – eines der größten Heavy-Metal-Festivals der Welt. Der Umfang reicht von Apparel über Social-Media-Inhalte bis zu kleinen Produkten wie einem Feuerzeug.",
-            "Entstanden sind unter anderem das <strong>offizielle Lineup-Shirt</strong>, ein Off-Season-Shirt für die Zeit zwischen den Festivals sowie Designs für die Schwesterveranstaltung <strong>Full Metal Mayrhofen</strong>. Jedes Motiv muss im Siebdruck funktionieren, auf schwarzem Textil lesbar sein und trotzdem die rohe Energie der Marke transportieren.",
-            "Ergänzend dazu entstanden <strong>Social-Media-Grafiken</strong> für Ankündigungen, Countdowns und Lineup-Reveals – formatoptimiert für Instagram und Facebook, konsequent im Wacken-Stil gehalten."
+            "Seit 2025 gestalte ich <strong>Merchandise und Grafiken für das Wacken Open Air</strong> – eines der größten Heavy-Metal-Festivals der Welt. Der Umfang reicht von Apparel über Printprodukte bis zu Social-Media-Inhalten für verschiedene Kampagnen.",
+            "Entstanden sind unter anderem das <strong>offizielle Lineup-Shirt</strong>, ein Shirt für die Winterveranstaltung <strong>Full Metal Mayrhofen</strong> sowie mehrere weitere T-Shirt-Designs für unterschiedliche Merch-Linien. Ergänzend dazu entstanden <strong>Postkarten und Webshop-Grafiken</strong> für den Festival-Store.",
+            "Parallel wurden <strong>Social-Media-Grafiken</strong> für Ankündigungen, Countdowns, Lineup-Reveals und Kampagnen erstellt – formatoptimiert für Instagram und Facebook und konsequent im Wacken-Stil umgesetzt.",
+            "Alle Motive werden so entwickelt, dass sie im <strong>Siebdruck auf dunklen Textilien</strong> funktionieren, klar lesbar bleiben und gleichzeitig die rohe, ikonische Bildsprache der Marke Wacken transportieren."
         ],
         "beschr_en": [
-            "Since 2025 I have been designing <strong>merchandise and graphics for Wacken Open Air</strong> — one of the world's largest heavy metal festivals. The scope ranges from apparel and social media content to small products such as a lighter.",
-            "Work includes the <strong>official lineup shirt</strong>, an off-season shirt for the period between festivals, and designs for the sister event <strong>Full Metal Mayrhofen</strong>. Every design must work in screen print, remain legible on black fabric, and still carry the raw energy of the brand.",
-            "Alongside those, <strong>social media graphics</strong> were created for announcements, countdowns and lineup reveals — format-optimised for Instagram and Facebook, consistently on-brand."
+            "Since 2025 I have been designing <strong>merchandise and graphics for Wacken Open Air</strong> — one of the world's largest heavy metal festivals. The scope ranges from apparel and print products to social media content for various campaigns.",
+            "The work includes the <strong>official lineup shirt</strong>, a shirt for the winter event <strong>Full Metal Mayrhofen</strong>, as well as several additional T-shirt designs for different merchandise lines. In addition, <strong>postcards and webshop graphics</strong> were created for the festival store.",
+            "Alongside the merchandise, <strong>social media graphics</strong> were produced for announcements, countdowns, lineup reveals and promotional campaigns — format-optimised for Instagram and Facebook while staying fully on-brand.",
+            "All designs are developed to work in <strong>screen printing on dark textiles</strong>, remain clearly legible and still capture the raw and iconic visual language of the Wacken brand."
         ],
         "details": {
             "Kunde": "Wacken Open Air",
             "Zeitraum": "2025 – laufend",
             "Formate": "Apparel, Print, Digital",
-            "Tools": "Illustrator, Photoshop"
+            "Tools": "Photoshop, Illustrator"
         },
         "details_en": {
             "Client": "Wacken Open Air",
             "Timeline": "2025 – ongoing",
             "Formats": "Apparel, Print, Digital",
-            "Tools": "Illustrator, Photoshop"
+            "Tools": "Photoshop, Illustrator"
         },
         "cover": "bilder/woa_header.jpg",
         "bilder": [
@@ -43,9 +45,9 @@
         ]
     },
     {
-        "id": "band-merch",
-        "titel": "Band Merch Collection",
-        "titel_en": "Band Merch Collection",
+        "id": "hbn",
+        "titel": "Headbangers Night",
+        "titel_en": "Headbangers Night",
         "cat": "metal",
         "jahr": "2024",
         "catLabel": "Metal · Merchandise",
@@ -82,9 +84,9 @@
         ]
     },
     {
-        "id": "stage-visual",
-        "titel": "Stage Visual Konzept",
-        "titel_en": "Stage Visual Concept",
+        "id": "mid",
+        "titel": "Metal im Dorf",
+        "titel_en": "Metal im Dorf",
         "cat": "festival",
         "jahr": "2023",
         "catLabel": "Festival · Stage Design",
