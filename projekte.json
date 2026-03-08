@@ -21,8 +21,9 @@
             "Format": "Print + Digital",
             "Tools": "Illustrator, InDesign, Photoshop"
         },
+        "cover": "bilder/woa_header.jpg",
         "bilder": [
-            "bilder/wacken-1.jpg",
+            "bilder/woa_temple.jpg",
             "bilder/wacken-2.jpg",
             "bilder/wacken-3.jpg"
         ]
