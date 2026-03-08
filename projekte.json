@@ -34,12 +34,12 @@
         },
         "cover": "bilder/woa_header.jpg",
         "bilder": [
-            "bilder/woa_temple.jpg",
-            "bilder/wacken-offseason-shirt.jpg",
-            "bilder/wacken-fmm-shirt.jpg",
-            "bilder/wacken-social-1.jpg",
-            "bilder/wacken-social-2.jpg",
-            "bilder/wacken-feuerzeug.jpg"
+            "bilder/wacken/woa_temple.jpg",
+            "bilder/wacken/wacken-offseason-shirt.jpg",
+            "bilder/wacken/wacken-fmm-shirt.jpg",
+            "bilder/wacken/wacken-social-1.jpg",
+            "bilder/wacken/wacken-social-2.jpg",
+            "bilder/wacken/wacken-feuerzeug.jpg"
         ]
     },
     {
@@ -120,122 +120,8 @@
             "bilder/stage-2.jpg",
             "bilder/stage-3.jpg"
         ]
-    },
-    {
-        "id": "dive-mount",
-        "titel": "Dive Equipment Mount",
-        "titel_en": "Dive Equipment Mount",
-        "cat": "3d",
-        "jahr": "2024",
-        "catLabel": "3D Print · Tauchsport",
-        "catLabel_en": "3D Print · Diving",
-        "tags": ["3D Druck", "PETG", "Tauchsport"],
-        "tags_en": ["3D Print", "PETG", "Diving"],
-        "kurz": "Kamerahalterung für Taucher, wenn der Markt kein passendes Teil liefert",
-        "kurz_en": "Camera mount for divers when the market offers no suitable part",
-        "beschr": [
-            "Eine <strong>universelle Kamerahalterung für Taucher</strong>, entwickelt weil kein Serienteil die benötigte Kombination aus Kamera, Lampe und Computer-Arm bietet.",
-            "Material: PETG mit 40% Infill – druckfest bis 30m Tiefe, seewasserbeständig, keine Metallteile die rosten. Der Arm ist modular aufgebaut: Einzelne Segmente lassen sich tauschen oder verlängern.",
-            "Nach <strong>3 Iterationen und Freitauchgängen bis 18m</strong> ist die aktuelle Version seit einem Jahr im Einsatz. CAD-Dateien auf Anfrage erhältlich."
-        ],
-        "beschr_en": [
-            "A <strong>universal camera mount for divers</strong>, developed because no off-the-shelf part offers the required combination of camera, torch and computer arm.",
-            "Material: PETG at 40% infill — pressure-proof to 30m depth, seawater-resistant, no metal parts to corrode. The arm is modular: individual segments can be swapped or extended.",
-            "After <strong>3 iterations and free dives to 18m</strong>, the current version has been in use for a year. CAD files available on request."
-        ],
-        "details": {
-            "Material": "PETG / ASA",
-            "Tiefe getestet": "bis 30m",
-            "Iterationen": "3 Versionen",
-            "Tools": "Fusion 360, PrusaSlicer"
-        },
-        "details_en": {
-            "Material": "PETG / ASA",
-            "Depth tested": "to 30m",
-            "Iterations": "3 versions",
-            "Tools": "Fusion 360, PrusaSlicer"
-        },
-        "bilder": [
-            "bilder/dive-mount-1.jpg",
-            "bilder/dive-mount-2.jpg"
-        ]
-    },
-    {
-        "id": "regulator-halterung",
-        "titel": "Regulator Halterung Prototyp",
-        "titel_en": "Regulator Mount Prototype",
-        "cat": "3d",
-        "jahr": "2023",
-        "catLabel": "3D Print · Custom Parts",
-        "catLabel_en": "3D Print · Custom Parts",
-        "tags": ["Prototyping", "TPU", "Adapter"],
-        "tags_en": ["Prototyping", "TPU", "Adapter"],
-        "kurz": "Flexibler Adapter für nicht-standardisierte Regulator-Schläuche",
-        "kurz_en": "Flexible adapter for non-standard regulator hoses",
-        "beschr": [
-            "Für einen Tauchclub entstand ein <strong>flexibler Halteradapter</strong> für Regulator-Schläuche älterer Bauart – Teile, die kein Hersteller mehr im Katalog hat.",
-            "Gedruckt in <strong>TPU (Shore 95A)</strong> für Flexibilität unter Wasserdruck. Die Form wurde aus Original-Schläuchen abgegossen und dann in CAD rekonstruiert – Toleranz: ±0.2mm.",
-            "Das Teil ist im Tauchclub seit über einem Jahr im aktiven Einsatz. Günstiger als jedes Sonderteil vom Hersteller, reparierbar in unter 2 Stunden."
-        ],
-        "beschr_en": [
-            "A <strong>flexible retaining adapter</strong> was developed for a diving club — for older-style regulator hoses that no manufacturer stocks any more.",
-            "Printed in <strong>TPU (Shore 95A)</strong> for flexibility under water pressure. The geometry was cast from original hoses and then reconstructed in CAD — tolerance: ±0.2mm.",
-            "The part has been in active use at the diving club for over a year. Cheaper than any special-order part from a manufacturer, repairable in under 2 hours."
-        ],
-        "details": {
-            "Material": "TPU Shore 95A",
-            "Tiefe getestet": "bis 25m",
-            "Stückzahl": "12 Exemplare",
-            "Tools": "Fusion 360, Bambu Studio"
-        },
-        "details_en": {
-            "Material": "TPU Shore 95A",
-            "Depth tested": "to 25m",
-            "Units produced": "12 pieces",
-            "Tools": "Fusion 360, Bambu Studio"
-        },
-        "bilder": [
-            "bilder/regulator-1.jpg"
-        ]
-    },
-    {
-        "id": "plakatserie",
-        "titel": "Konzert Plakatserie",
-        "titel_en": "Concert Poster Series",
-        "cat": "metal",
-        "jahr": "2023",
-        "catLabel": "Metal · Poster Design",
-        "catLabel_en": "Metal · Poster Design",
-        "tags": ["Poster", "Typografie", "Siebdruck"],
-        "tags_en": ["Poster", "Typography", "Screen Print"],
-        "kurz": "Siebgedruckte Konzertplakate im Risograph-Stil",
-        "kurz_en": "Screen-printed concert posters in a risograph style",
-        "beschr": [
-            "Eine Serie von <strong>6 Konzertplakaten</strong> für eine Reihe lokaler Metal-Shows – gedruckt im Zweifarb-Siebdruck auf 120g Kraftpapier.",
-            "Jedes Plakat hat ein eigenständiges Motiv, folgt aber einem gemeinsamen typografischen System. Der Stil orientiert sich an klassischen <strong>70er-Jahre-Konzertplatten</strong> und modernem Risograph-Druck – handgemacht wirkend, aber präzise konstruiert.",
-            "Auflage je Plakat: 50 Stück. Einige Motive sind mittlerweile vergriffen und tauchen auf Discogs auf."
-        ],
-        "beschr_en": [
-            "A series of <strong>6 concert posters</strong> for a run of local metal shows — printed in two-colour screen print on 120g kraft paper.",
-            "Each poster has its own distinct artwork but follows a shared typographic system. The style draws on classic <strong>1970s concert posters</strong> and modern risograph printing — handmade in feel, but precisely constructed.",
-            "Edition of 50 per design. Some prints are now sold out and showing up on Discogs."
-        ],
-        "details": {
-            "Auflage": "50 Stück / Motiv",
-            "Druck": "Zweifarb-Siebdruck",
-            "Format": "A2, Hochformat",
-            "Tools": "Illustrator, Photoshop"
-        },
-        "details_en": {
-            "Edition": "50 pieces / design",
-            "Print": "Two-colour screen print",
-            "Format": "A2, portrait",
-            "Tools": "Illustrator, Photoshop"
-        },
-        "bilder": [
-            "bilder/plakat-1.jpg",
-            "bilder/plakat-2.jpg",
-            "bilder/plakat-3.jpg"
-        ]
     }
+
+
+
 ]
