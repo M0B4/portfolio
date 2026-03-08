@@ -1,3 +1,12 @@
+ich möchte eine option anbieten die website zwischen deutsch und englisch umzuschalten 14:04 8 Dateien angesehen, hat einen Befehl ausgeführt Jetzt habe ich einen guten Überblick. Ich werde die Datei kopieren und eine vollständige DE/EN-Umschaltung implementieren.
+Copy file to working directory Jetzt füge ich den Sprachwechsler ein. Ich werde: Einen DE/EN-Toggle-Button in die Nav einfügen Alle deutschen Texte mit data-de/data-en Attributen versehen Das JS für die Umschaltung ergänzen 2 Dateien bearbeitet Now add
+data-de / data-en attributes to all translatable elements and the JS translation logic: 21 Dateien bearbeitet, hat eine Datei angesehen Now add the JavaScript translation logic before the closing </script> tag: Add language switching JS before closing
+script tag Now also update the form submit JS to use translated strings: Update handleFormSubmit to use translated button text Also update the form success message: Add data attributes to form success message Now copy to output: Hat einen Befehl ausgeführt,
+datei lesen Fertig! Hier ist was ich eingebaut habe: DE / EN Toggle-Button in der Navigation (zwischen den Links und dem Hamburger-Menü), im gleichen Monospace-Stil wie die restliche Nav. Die aktive Sprache wird gold hervorgehoben. Übersetzte Inhalte:
+Hero-Tag, Beschreibungstext, Badge Navigationslinks (Kontakt / Contact) Abschnittsüberschriften (Ausgewählte Projekte / Über mich) Filter-Tabs (Alle / All) About-Fließtexte und Stat-Labels Kontaktformular: alle Labels, Platzhalter, Select-Optionen, Buttons
+Footer (Claim, Links, Copyright) Overlay-Zurück-Button & Erfolgsmeldung Die gewählte Sprache wird in localStorage gespeichert, sodass sie beim Seitenreload erhalten bleibt. Index Code · HTML Claude ist eine KI und kann Fehler machen. Bitte überprüfe die
+Antworten. Index · HTML Syntaxhervorhebung wurde aufgrund der Codegröße deaktiviert.
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -72,6 +81,28 @@
             opacity: 0.025;
             pointer-events: none;
             z-index: 9000;
+        }
+        
+        .lang-toggle {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: var(--silver);
+            background: transparent;
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s;
+            flex-shrink: 0;
+        }
+        
+        .lang-toggle:hover {
+            color: var(--gold);
+            border-color: var(--gold-dim);
+        }
+        
+        .lang-toggle .active-lang {
+            color: var(--gold);
         }
         /* NAV */
         
@@ -2138,7 +2169,7 @@
 </head>
 
 <body>
-    <a href="#works" class="skip-link">Zum Inhalt springen</a>
+    <a href="#works" class="skip-link" data-de="Zum Inhalt springen" data-en="Skip to content">Zum Inhalt springen</a>
 
 
     <!-- ==================== PROJEKT-DATEN ====================
@@ -2164,8 +2195,9 @@
         <ul class="nav-links" id="nav-links">
             <li><a href="#works" onclick="closeMenu()">// Works</a></li>
             <li><a href="#about" onclick="closeMenu()">// About</a></li>
-            <li><a href="#contact" onclick="closeMenu()">// Kontakt</a></li>
+            <li><a href="#contact" onclick="closeMenu()" data-de="// Kontakt" data-en="// Contact">// Kontakt</a></li>
         </ul>
+        <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()" aria-label="Sprache wechseln">DE / EN</button>
         <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>
   </button>
@@ -3644,14 +3676,14 @@
   </g>
 </svg>
 
-        <div class="hero-tag">Mediendesign · Visual Identity · 3D Print</div>
+        <div class="hero-tag" data-de="Mediendesign · Visual Identity · 3D Print" data-en="Media Design · Visual Identity · 3D Print">Mediendesign · Visual Identity · 3D Print</div>
         <h1 class="hero-title">M.<br><span class="gold">Barz</span></h1>
         <div class="hero-meta">
-            <p class="hero-desc">Zwischen Moshpit und Messsingring. Ich gestalte für die Heavy-Metal-Welt, Festivalkultur und präzise 3D-Drucklösungen für den Tauchsport.</p>
+            <p class="hero-desc" data-de="Zwischen Moshpit und Messsingring. Ich gestalte für die Heavy-Metal-Welt, Festivalkultur und präzise 3D-Drucklösungen für den Tauchsport." data-en="Between moshpit and brass ring. I design for the heavy metal world, festival culture, and precise 3D-print solutions for diving.">Zwischen Moshpit und Messsingring. Ich gestalte für die Heavy-Metal-Welt, Festivalkultur und präzise 3D-Drucklösungen für den Tauchsport.</p>
             <div class="hero-badges">
                 <div class="badge">Heavy Metal & Festival</div>
                 <div class="badge">Wacken · Open Air</div>
-                <div class="badge">3D Print für Tauchen</div>
+                <div class="badge" data-de="3D Print für Tauchen" data-en="3D Print for Diving">3D Print für Tauchen</div>
                 <div class="badge">Visual Design</div>
             </div>
         </div>
@@ -3667,14 +3699,14 @@
     <section id="works" role="main">
         <div class="sec-header reveal">
             <span class="sec-num">01 //</span>
-            <h2 class="sec-title">Ausgewählte Projekte</h2>
+            <h2 class="sec-title" data-de="Ausgewählte Projekte" data-en="Selected Projects">Ausgewählte Projekte</h2>
             <div class="sec-line"></div>
         </div>
         <div class="cat-tabs reveal">
-            <button class="cat-tab active" onclick="filterWorks('all',this)">Alle</button>
+            <button class="cat-tab active" onclick="filterWorks('all',this)" data-de="Alle" data-en="All">Alle</button>
             <button class="cat-tab" onclick="filterWorks('festival',this)">Festival</button>
             <button class="cat-tab" onclick="filterWorks('metal',this)">Metal</button>
-            <button class="cat-tab" onclick="filterWorks('3d',this)">3D Print</button>
+            <button class="cat-tab" onclick="filterWorks('3d',this)" data-de="3D Print" data-en="3D Print">3D Print</button>
         </div>
         <div class="works-list" id="works-list"></div>
     </section>
@@ -3687,27 +3719,30 @@
         <div class="about-content">
             <div class="sec-header reveal" style="margin-bottom:40px;">
                 <span class="sec-num">02 //</span>
-                <h2 class="sec-title">Über mich</h2>
+                <h2 class="sec-title" data-de="Über mich" data-en="About Me">Über mich</h2>
             </div>
             <div class="about-text-block">
-                <p class="reveal">Ich bin Mediendesigner mit einer klaren Nische: <em>Heavy Metal, Festivalkultur und die technische Seite des Tauchsports.</em> Diese Welten klingen weit auseinander – für mich gehören sie zusammen. Beide verlangen Präzision, Leidenschaft
+                <p class="reveal" data-de="Ich bin Mediendesigner mit einer klaren Nische: <em>Heavy Metal, Festivalkultur und die technische Seite des Tauchsports.</em> Diese Welten klingen weit auseinander – für mich gehören sie zusammen. Beide verlangen Präzision, Leidenschaft und Respekt vor dem Detail."
+                    data-en="I'm a media designer with a clear niche: <em>Heavy Metal, festival culture, and the technical side of diving.</em> These worlds may sound worlds apart — to me, they belong together. Both demand precision, passion, and respect for detail.">Ich bin Mediendesigner mit einer klaren Nische: <em>Heavy Metal, Festivalkultur und die technische Seite des Tauchsports.</em> Diese Welten klingen weit auseinander – für mich gehören sie zusammen. Beide verlangen Präzision, Leidenschaft
                     und Respekt vor dem Detail.</p>
-                <p class="reveal d1">Seit Jahren bin ich tief in der <strong>deutschen Metalszene</strong> verwurzelt – von Flyern und Plakaten über komplette Band-Identitäten bis hin zu Merchandise, das wirklich getragen wird. Das Wacken Open Air ist für mich nicht nur ein
+                <p class="reveal d1" data-de='Seit Jahren bin ich tief in der <strong>deutschen Metalszene</strong> verwurzelt – von Flyern und Plakaten über komplette Band-Identitäten bis hin zu Merchandise, das wirklich getragen wird. Das Wacken Open Air ist für mich nicht nur ein Festival, sondern eine Schule für visuelle Kommunikation mit Haltung.'
+                    data-en='For years I have been deeply rooted in the <strong>German metal scene</strong> — from flyers and posters to complete band identities and merchandise that actually gets worn. Wacken Open Air is not just a festival to me, but a school for visual communication with conviction.'>Seit Jahren bin ich tief in der <strong>deutschen Metalszene</strong> verwurzelt – von Flyern und Plakaten über komplette Band-Identitäten bis hin zu Merchandise, das wirklich getragen wird. Das Wacken Open Air ist für mich nicht nur ein
                     Festival, sondern eine Schule für visuelle Kommunikation mit Haltung.</p>
-                <p class="reveal d2">Parallel dazu entwickle ich <strong>3D-gedruckte Lösungen für Taucher</strong>: Halterungen, Adapter, Gehäuse – Teile, die man unter Wasser tatsächlich braucht und die kein Katalog liefert. Form follows function, auch bei 30 Metern Tiefe.</p>
+                <p class="reveal d2" data-de="Parallel dazu entwickle ich <strong>3D-gedruckte Lösungen für Taucher</strong>: Halterungen, Adapter, Gehäuse – Teile, die man unter Wasser tatsächlich braucht und die kein Katalog liefert. Form follows function, auch bei 30 Metern Tiefe."
+                    data-en="In parallel, I develop <strong>3D-printed solutions for divers</strong>: mounts, adapters, housings — parts you actually need underwater that no catalogue supplies. Form follows function, even at 30 metres depth.">Parallel dazu entwickle ich <strong>3D-gedruckte Lösungen für Taucher</strong>: Halterungen, Adapter, Gehäuse – Teile, die man unter Wasser tatsächlich braucht und die kein Katalog liefert. Form follows function, auch bei 30 Metern Tiefe.</p>
             </div>
             <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="reveal d2">
                 <div class="stat-block">
                     <div class="stat-num" data-count="8" data-suffix="+">8+</div>
-                    <div class="stat-label">Jahre im Metal-Design</div>
+                    <div class="stat-label" data-de="Jahre im Metal-Design" data-en="Years in Metal Design">Jahre im Metal-Design</div>
                 </div>
                 <div class="stat-block">
                     <div class="stat-num" data-count="47" data-suffix="+">47+</div>
-                    <div class="stat-label">Realisierte Projekte</div>
+                    <div class="stat-label" data-de="Realisierte Projekte" data-en="Completed Projects">Realisierte Projekte</div>
                 </div>
             </div>
             <div style="margin-top:40px;" class="reveal d3">
-                <a href="#contact" class="btn-primary">Projekt besprechen →</a>
+                <a href="#contact" class="btn-primary" data-de="Projekt besprechen →" data-en="Discuss a project →">Projekt besprechen →</a>
             </div>
         </div>
     </section>
@@ -3717,41 +3752,41 @@
     <section id="contact">
         <div class="contact-bg"></div>
         <div class="contact-inner">
-            <p class="contact-pre reveal">Kontakt aufnehmen</p>
-            <h2 class="contact-heading reveal">Lass uns<br><span class="dim">Lärm</span><br>machen.</h2>
-            <p class="reveal d1" style="font-size:1.1rem;color:var(--silver);font-weight:300;font-style:italic;max-width:420px;line-height:1.7;">Ob Festival-Kampagne, Metal-Grafik oder ein 3D-Druckteil für den nächsten Tauchgang – meld dich einfach.</p>
+            <p class="contact-pre reveal" data-de="Kontakt aufnehmen" data-en="Get in touch">Kontakt aufnehmen</p>
+            <h2 class="contact-heading reveal" data-de="Lass uns<br><span class='dim'>Lärm</span><br>machen." data-en="Let's make<br><span class='dim'>noise</span><br>together.">Lass uns<br><span class="dim">Lärm</span><br>machen.</h2>
+            <p class="reveal d1" style="font-size:1.1rem;color:var(--silver);font-weight:300;font-style:italic;max-width:420px;line-height:1.7;" data-de="Ob Festival-Kampagne, Metal-Grafik oder ein 3D-Druckteil für den nächsten Tauchgang – meld dich einfach." data-en="Whether it's a festival campaign, metal artwork, or a 3D-printed part for your next dive — just reach out.">Ob Festival-Kampagne, Metal-Grafik oder ein 3D-Druckteil für den nächsten Tauchgang – meld dich einfach.</p>
 
             <form class="contact-form reveal d1" id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
                 <div class="form-row">
                     <div class="form-field">
                         <label for="cf-name">Name</label>
-                        <input type="text" id="cf-name" name="name" placeholder="Dein Name" required autocomplete="name">
+                        <input type="text" id="cf-name" name="name" placeholder="Dein Name" data-placeholder-de="Dein Name" data-placeholder-en="Your name" required autocomplete="name">
                     </div>
                     <div class="form-field">
                         <label for="cf-email">E-Mail</label>
-                        <input type="email" id="cf-email" name="email" placeholder="deine@mail.de" required autocomplete="email">
+                        <input type="email" id="cf-email" name="email" placeholder="deine@mail.de" data-placeholder-de="deine@mail.de" data-placeholder-en="your@mail.com" required autocomplete="email">
                     </div>
                 </div>
                 <div class="form-field">
-                    <label for="cf-subject">Betreff</label>
+                    <label for="cf-subject" data-de="Betreff" data-en="Subject">Betreff</label>
                     <select id="cf-subject" name="subject">
-          <option value="">Worum geht es?</option>
-          <option value="festival">Festival / Event Design</option>
-          <option value="metal">Metal / Band Grafik</option>
-          <option value="3d">3D-Druck / Tauchausrüstung</option>
-          <option value="other">Anderes Projekt</option>
+          <option value="" data-de="Worum geht es?" data-en="What's it about?">Worum geht es?</option>
+          <option value="festival" data-de="Festival / Event Design" data-en="Festival / Event Design">Festival / Event Design</option>
+          <option value="metal" data-de="Metal / Band Grafik" data-en="Metal / Band Artwork">Metal / Band Grafik</option>
+          <option value="3d" data-de="3D-Druck / Tauchausrüstung" data-en="3D Print / Diving Gear">3D-Druck / Tauchausrüstung</option>
+          <option value="other" data-de="Anderes Projekt" data-en="Other Project">Anderes Projekt</option>
         </select>
                 </div>
                 <div class="form-field">
-                    <label for="cf-message">Nachricht</label>
-                    <textarea id="cf-message" name="message" placeholder="Erzähl mir von deinem Projekt …" rows="5" required></textarea>
+                    <label for="cf-message" data-de="Nachricht" data-en="Message">Nachricht</label>
+                    <textarea id="cf-message" name="message" placeholder="Erzähl mir von deinem Projekt …" data-placeholder-de="Erzähl mir von deinem Projekt …" data-placeholder-en="Tell me about your project …" rows="5" required></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn-primary" id="form-submit">Nachricht senden →</button>
-                    <a href="#works" class="btn-ghost">Arbeiten ansehen</a>
+                    <button type="submit" class="btn-primary" id="form-submit" data-de="Nachricht senden →" data-en="Send message →">Nachricht senden →</button>
+                    <a href="#works" class="btn-ghost" data-de="Arbeiten ansehen" data-en="View works">Arbeiten ansehen</a>
                 </div>
                 <p class="form-notice">Oder direkt: <a href="/cdn-cgi/l/email-protection#650d0409090a250704171f0e170004110c134b0100"><span class="__cf_email__" data-cfemail="523a333e3e3d123033202839203733263b247c3637">[email&#160;protected]</span></a></p>
-                <div class="form-success" id="form-success" aria-live="polite">
+                <div class="form-success" id="form-success" aria-live="polite" data-de="⬡ Nachricht gesendet — ich melde mich bald!" data-en="⬡ Message sent — I'll be in touch soon!">
                     <span>⬡</span> Nachricht gesendet — ich melde mich bald!
                 </div>
             </form>
@@ -3762,16 +3797,16 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <span class="footer-logo">⬡ M. BARZ</span>
-                <p class="footer-claim">Zwischen Moshpit und Messing.<br>Design, das nach Verstärker riecht.</p>
+                <p class="footer-claim" data-de="Zwischen Moshpit und Messing.<br>Design, das nach Verstärker riecht." data-en="Between moshpit and brass.<br>Design that smells like an amp.">Zwischen Moshpit und Messing.<br>Design, das nach Verstärker riecht.</p>
             </div>
             <div class="footer-links">
                 <a href="#works">// Works</a>
                 <a href="#about">// About</a>
-                <a href="#contact">// Kontakt</a>
+                <a href="#contact" data-de="// Kontakt" data-en="// Contact">// Kontakt</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <span class="footer-copy">© 2025 M. Barz — Mediendesign · Metal · Tauchen</span>
+            <span class="footer-copy" data-de="© 2025 M. Barz — Mediendesign · Metal · Tauchen" data-en="© 2025 M. Barz — Media Design · Metal · Diving">© 2025 M. Barz — Mediendesign · Metal · Tauchen</span>
             <div class="footer-legal">
                 <button class="footer-impressum-btn" onclick="openImpressum()" aria-label="Impressum öffnen">Impressum</button>
                 <button class="footer-impressum-btn" onclick="openImpressum()" aria-label="Datenschutz">Datenschutz</button>
@@ -3808,7 +3843,7 @@
     <!-- ==================== PROJECT DETAIL OVERLAY ==================== -->
     <div class="overlay" id="overlay" role="dialog" aria-modal="true">
         <div class="overlay-nav">
-            <button class="overlay-back" onclick="closeOverlay()">← Zurück</button>
+            <button class="overlay-back" onclick="closeOverlay()" data-de="← Zurück" data-en="← Back">← Zurück</button>
             <span class="overlay-breadcrumb" id="overlay-breadcrumb">Works / —</span>
         </div>
 
@@ -4103,7 +4138,7 @@ function handleFormSubmit(e) {
   const message = document.getElementById('cf-message').value.trim();
   if (!name || !email || !message) return;
   btn.disabled = true;
-  btn.textContent = 'Wird gesendet …';
+  btn.textContent = currentLang === 'de' ? 'Wird gesendet …' : 'Sending …';
   setTimeout(() => {
     form.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
     btn.style.display = 'none';
@@ -4123,6 +4158,54 @@ function closeImpressum() {
 document.getElementById('impressum-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeImpressum();
 });
+
+// ── Language Toggle ────────────────────────────────────────
+let currentLang = localStorage.getItem('mbarz-lang') || 'de';
+
+function toggleLang() {
+  currentLang = currentLang === 'de' ? 'en' : 'de';
+  localStorage.setItem('mbarz-lang', currentLang);
+  applyLang();
+}
+
+function applyLang() {
+  const btn = document.getElementById('lang-toggle');
+  if (btn) {
+    btn.innerHTML = currentLang === 'de'
+      ? '<span class="active-lang">DE</span> / EN'
+      : 'DE / <span class="active-lang">EN</span>';
+  }
+
+  // Update html lang attribute
+  document.documentElement.lang = currentLang;
+
+  // Translate all elements with data-de / data-en
+  document.querySelectorAll('[data-de],[data-en]').forEach(el => {
+    const val = el.getAttribute('data-' + currentLang);
+    if (val !== null) {
+      // Use innerHTML for elements that may contain HTML tags
+      const tag = el.tagName.toLowerCase();
+      if (['input', 'textarea', 'select', 'button', 'a', 'span', 'div', 'p', 'h1', 'h2', 'h3', 'label'].includes(tag)) {
+        el.innerHTML = val;
+      }
+    }
+  });
+
+  // Handle placeholders separately
+  document.querySelectorAll('[data-placeholder-de],[data-placeholder-en]').forEach(el => {
+    const val = el.getAttribute('data-placeholder-' + currentLang);
+    if (val !== null) el.placeholder = val;
+  });
+
+  // Update select option text
+  document.querySelectorAll('select option[data-de],select option[data-en]').forEach(opt => {
+    const val = opt.getAttribute('data-' + currentLang);
+    if (val !== null) opt.textContent = val;
+  });
+}
+
+// Init on load
+applyLang();
 
 // ── Init ───────────────────────────────────────────────────
 ladeProjekte();
