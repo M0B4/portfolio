@@ -1,31 +1,30 @@
 [{
-        "id": "wacken-2024",
-        "titel": "Wacken Identity 2024",
+        "id": "wacken-merchandise",
+        "titel": "Wacken Merchandise",
         "cat": "festival",
-        "jahr": "2024",
-        "catLabel": "Festival · Branding",
-        "tags": [
-            "Branding",
-            "Print",
-            "Signage"
-        ],
-        "kurz": "Komplette Visual Identity für das Wacken Open Air 2024",
+        "jahr": "2025",
+        "catLabel": "Festival · Merchandise",
+        "tags": ["Apparel", "Print", "Social Media", "Merchandise"],
+        "kurz": "Shirts, Grafiken und mehr für Wacken Open Air und verwandte Veranstaltungen",
         "beschr": [
-            "Für das <strong>Wacken Open Air 2024</strong> wurde eine durchgehende visuelle Identität entwickelt – von den ersten Ankündigungs-Flyern bis hin zu Bühnenbackdrops und Merchandise.",
-            "Das Designsystem basiert auf einer reduzierten Palette aus Schwarz, Stahl und Gold, kombiniert mit einer eigens angepassten Lettering-Variante für Headlines. Ziel war es, die rohe Energie des Festivals in klare, druckfähige Grafik zu übersetzen.",
-            "Gesamtumfang: <strong>Poster, Programmheft, Wristband-Design, Bühnenplane, Social-Media-Templates</strong> und Leitsystemgrafiken für das Festivalgelände."
+            "Seit 2025 gestalte ich <strong>Merchandise und Grafiken für das Wacken Open Air</strong> – eines der größten Heavy-Metal-Festivals der Welt. Der Umfang reicht von Apparel über Social-Media-Inhalte bis zu kleinen Produkten wie einem Feuerzeug.",
+            "Entstanden sind unter anderem das <strong>offizielle Lineup-Shirt</strong>, ein Off-Season-Shirt für die Zeit zwischen den Festivals sowie Designs für die Schwesterveranstaltung <strong>Full Metal Mayrhofen</strong>. Jedes Motiv muss im Siebdruck funktionieren, auf schwarzem Textil lesbar sein und trotzdem die rohe Energie der Marke transportieren.",
+            "Ergänzend dazu entstanden <strong>Social-Media-Grafiken</strong> für Ankündigungen, Countdowns und Lineup-Reveals – formatoptimiert für Instagram und Facebook, konsequent im Wacken-Stil gehalten."
         ],
         "details": {
             "Kunde": "Wacken Open Air",
-            "Umfang": "Full Identity",
-            "Format": "Print + Digital",
-            "Tools": "Illustrator, InDesign, Photoshop"
+            "Zeitraum": "2025 – laufend",
+            "Formate": "Apparel, Print, Digital",
+            "Tools": "Illustrator, Photoshop"
         },
         "cover": "bilder/woa_header.jpg",
         "bilder": [
             "bilder/woa_temple.jpg",
-            "bilder/wacken-2.jpg",
-            "bilder/wacken-3.jpg"
+            "bilder/wacken-offseason-shirt.jpg",
+            "bilder/wacken-fmm-shirt.jpg",
+            "bilder/wacken-social-1.jpg",
+            "bilder/wacken-social-2.jpg",
+            "bilder/wacken-feuerzeug.jpg"
         ]
     },
     {
@@ -34,11 +33,7 @@
         "cat": "metal",
         "jahr": "2024",
         "catLabel": "Metal · Merchandise",
-        "tags": [
-            "Merchandise",
-            "Siebdruck",
-            "Apparel"
-        ],
+        "tags": ["Merchandise", "Siebdruck", "Apparel"],
         "kurz": "T-Shirt- und Merchandising-Kollektion für eine Metal-Band",
         "beschr": [
             "Eine vollständige <strong>Merchandise-Kollektion</strong> für eine deutsche Metal-Band – entwickelt für Tour, Webshop und Festivalstand.",
@@ -62,11 +57,7 @@
         "cat": "festival",
         "jahr": "2023",
         "catLabel": "Festival · Stage Design",
-        "tags": [
-            "Stage Design",
-            "Motion",
-            "Projektion"
-        ],
+        "tags": ["Stage Design", "Motion", "Projektion"],
         "kurz": "Bühnengrafik und Projektionskonzept für ein Open-Air-Festival",
         "beschr": [
             "Entwicklung eines <strong>Bühnenbild-Konzepts</strong> für eine Festival-Hauptbühne: Backdrop-Grafik, LED-Wall-Layouts und animierte Übergänge zwischen Acts.",
@@ -91,11 +82,7 @@
         "cat": "3d",
         "jahr": "2024",
         "catLabel": "3D Print · Tauchsport",
-        "tags": [
-            "3D Druck",
-            "PETG",
-            "Tauchsport"
-        ],
+        "tags": ["3D Druck", "PETG", "Tauchsport"],
         "kurz": "Kamerahalterung für Taucher, wenn der Markt kein passendes Teil liefert",
         "beschr": [
             "Eine <strong>universelle Kamerahalterung für Taucher</strong>, entwickelt weil kein Serienteil die benötigte Kombination aus Kamera, Lampe und Computer-Arm bietet.",
@@ -119,11 +106,7 @@
         "cat": "3d",
         "jahr": "2023",
         "catLabel": "3D Print · Custom Parts",
-        "tags": [
-            "Prototyping",
-            "TPU",
-            "Adapter"
-        ],
+        "tags": ["Prototyping", "TPU", "Adapter"],
         "kurz": "Flexibler Adapter für nicht-standardisierte Regulator-Schläuche",
         "beschr": [
             "Für einen Tauchclub entstand ein <strong>flexibler Halteradapter</strong> für Regulator-Schläuche älterer Bauart – Teile, die kein Hersteller mehr im Katalog hat.",
@@ -146,11 +129,7 @@
         "cat": "metal",
         "jahr": "2023",
         "catLabel": "Metal · Poster Design",
-        "tags": [
-            "Poster",
-            "Typografie",
-            "Siebdruck"
-        ],
+        "tags": ["Poster", "Typografie", "Siebdruck"],
         "kurz": "Siebgedruckte Konzertplakate im Risograph-Stil",
         "beschr": [
             "Eine Serie von <strong>6 Konzertplakaten</strong> für eine Reihe lokaler Metal-Shows – gedruckt im Zweifarb-Siebdruck auf 120g Kraftpapier.",
