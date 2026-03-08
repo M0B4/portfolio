@@ -1867,6 +1867,16 @@
             display: block;
         }
         
+        .form-error {
+            margin-top: 24px;
+            padding: 16px 20px;
+            border: 1px solid #c94c4c;
+            color: #e07070;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+        }
+        
         .btn-primary:disabled {
             opacity: 0.5;
             cursor: not-allowed;
@@ -3748,6 +3758,8 @@
             <p class="reveal d1" style="font-size:1.1rem;color:var(--silver);font-weight:300;font-style:italic;max-width:420px;line-height:1.7;" data-de="Ob Festival-Kampagne, Metal-Grafik oder ein 3D-Druckteil für den nächsten Tauchgang – meld dich einfach." data-en="Whether it's a festival campaign, metal artwork, or a 3D-printed part for your next dive — just reach out.">Ob Festival-Kampagne, Metal-Grafik oder ein 3D-Druckteil für den nächsten Tauchgang – meld dich einfach.</p>
 
             <form class="contact-form reveal d1" id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
+                <!-- Honeypot: versteckt, nur Bots füllen das aus -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 <div class="form-row">
                     <div class="form-field">
                         <label for="cf-name">Name</label>
@@ -3779,6 +3791,9 @@
                 <p class="form-notice">Oder direkt: <a href="/cdn-cgi/l/email-protection#650d0409090a250704171f0e170004110c134b0100"><span class="__cf_email__" data-cfemail="523a333e3e3d123033202839203733263b247c3637">[email&#160;protected]</span></a></p>
                 <div class="form-success" id="form-success" aria-live="polite" data-de="⬡ Nachricht gesendet — ich melde mich bald!" data-en="⬡ Message sent — I'll be in touch soon!">
                     <span>⬡</span> Nachricht gesendet — ich melde mich bald!
+                </div>
+                <div class="form-error" id="form-error" aria-live="polite" data-de="⚠ Fehler beim Senden — versuch es später nochmal oder schreib direkt per Mail." data-en="⚠ Something went wrong — please try again later or reach out by email directly." style="display:none;">
+                    ⚠ Fehler beim Senden — versuch es später nochmal oder schreib direkt per Mail.
                 </div>
             </form>
         </div>
@@ -4128,22 +4143,49 @@ function closeMenu() {
 }
 
 // ── Contact Form ───────────────────────────────────────────
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contact-form');
   const btn = document.getElementById('form-submit');
   const success = document.getElementById('form-success');
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
+  const error = document.getElementById('form-error');
+
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
   const message = document.getElementById('cf-message').value.trim();
   if (!name || !email || !message) return;
+
+  // Reset state
+  error.style.display = 'none';
   btn.disabled = true;
   btn.textContent = currentLang === 'de' ? 'Wird gesendet …' : 'Sending …';
-  setTimeout(() => {
-    form.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
-    btn.style.display = 'none';
-    success.classList.add('visible');
-  }, 1200);
+
+  try {
+    const res = await fetch('https://formspree.io/f/meeronwg', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+
+    if (res.ok) {
+      form.querySelectorAll('input:not([name="_gotcha"]), select, textarea').forEach(el => el.value = '');
+      btn.style.display = 'none';
+      // Apply correct language to success message
+      success.textContent = currentLang === 'de'
+        ? '⬡ Nachricht gesendet — ich melde mich bald!'
+        : '⬡ Message sent — I\'ll be in touch soon!';
+      success.classList.add('visible');
+    } else {
+      throw new Error('Server error ' + res.status);
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = currentLang === 'de' ? 'Nachricht senden →' : 'Send message →';
+    error.textContent = currentLang === 'de'
+      ? '⚠ Fehler beim Senden — versuch es später nochmal oder schreib direkt per Mail.'
+      : '⚠ Something went wrong — please try again later or reach out by email directly.';
+    error.style.display = 'block';
+  }
 }
 
 // ── Impressum ─────────────────────────────────────────────
