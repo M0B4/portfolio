@@ -117,6 +117,7 @@
             "Format": "Digital + Print",
             "Tools": "Photoshop, Illustrator"
         },
+        "cover": "bilder/mid/header.jpg",
         "bilder": [
             "bilder/mid/mid_i.jpg",
             "bilder/mid/mid_ii.jpg",
