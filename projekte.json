@@ -88,13 +88,13 @@
         "titel": "Metal im Dorf",
         "titel_en": "Metal im Dorf",
         "cat": "festival",
-        "jahr": "2023",
-        "catLabel": "Festival · Stage Design",
-        "catLabel_en": "Festival · Stage Design",
-        "tags": ["Stage Design", "Motion", "Projektion"],
-        "tags_en": ["Stage Design", "Motion", "Projection"],
-        "kurz": "Bühnengrafik und Projektionskonzept für ein Open-Air-Festival",
-        "kurz_en": "Stage graphics and projection concept for an open-air festival",
+        "jahr": "2022",
+        "catLabel": "Festival",
+        "catLabel_en": "Festival",
+        "tags": ["Festival", "Merchandise"],
+        "tags_en": ["Festival", "Merchandise"],
+        "kurz": "Festivalbranding und Merchandising für ein aufstrebendes Open-Air-Festival",
+        "kurz_en": "Festival branding and merchandise for a rising open-air festival",
         "beschr": [
             "Metal im Dorf, mitten in Deutschland, mitten in der Szene. Seit fünf Ausgaben gestalte ich das komplette visuelle Bild des Festivals: ",
             "<strong>Plakate</strong> für das Hauptprogramm und alle Nebenveranstaltungen, <strong>Bändchen</strong>, <strong>T-Shirts</strong>. ",
@@ -106,16 +106,16 @@
             "A newcomer festival carving out its place in the German metal scene year after year. Being part of that growth through my work makes this project something special."
         ],
         "details": {
-            "Kunde": "Festival (NDA)",
+            "Kunde": "Metal im Dorf",
             "Umfang": "Konzept + Umsetzung",
-            "Format": "Print + Video",
-            "Tools": "After Effects, Illustrator, Cinema 4D"
+            "Format": "Digital + Print",
+            "Tools": "Photoshop, Illustrator"
         },
         "details_en": {
-            "Client": "Festival (NDA)",
+            "Client": "Metal im Dorf",
             "Scope": "Concept + Execution",
-            "Format": "Print + Video",
-            "Tools": "After Effects, Illustrator, Cinema 4D"
+            "Format": "Digital + Print",
+            "Tools": "Photoshop, Illustrator"
         },
         "bilder": [
             "bilder/mid/mid_i.jpg",
