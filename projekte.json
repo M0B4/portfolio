@@ -96,14 +96,14 @@
         "kurz": "Bühnengrafik und Projektionskonzept für ein Open-Air-Festival",
         "kurz_en": "Stage graphics and projection concept for an open-air festival",
         "beschr": [
-            "Entwicklung eines <strong>Bühnenbild-Konzepts</strong> für eine Festival-Hauptbühne: Backdrop-Grafik, LED-Wall-Layouts und animierte Übergänge zwischen Acts.",
-            "Das Konzept vereint statische Druckgrafiken (Bühnenverkleidung, Seitenflügel) mit einem animierten Loop-System für die LED-Wand – exportiert als ProRes-Dateien für den Live-Einsatz.",
-            "Besonderheit: Alle Animationen wurden so konzipiert, dass das Bühnenbild <strong>auch ohne LED-Wall</strong> als rein physisches Set funktioniert."
+            "Metal im Dorf, mitten in Deutschland, mitten in der Szene. Seit fünf Ausgaben gestalte ich das komplette visuelle Bild des Festivals: ",
+            "<strong>Plakate</strong> für das Hauptprogramm und alle Nebenveranstaltungen, <strong>Bändchen</strong>, <strong>T-Shirts</strong>. ",
+            "Ein Newcomer-Festival, das sich Jahr für Jahr mehr seinen Platz in der deutschen Metal-Szene erkämpft. Dieses Wachstum mit der eigenen Arbeit zu begleiten, ist etwas Besonderes."
         ],
         "beschr_en": [
-            "Development of a <strong>stage set concept</strong> for a festival main stage: backdrop graphics, LED wall layouts and animated transitions between acts.",
-            "The concept combines static print graphics (stage cladding, side wings) with an animated loop system for the LED wall — exported as ProRes files for live use.",
-            "Key feature: all animations were designed so the stage set <strong>works without the LED wall</strong> as a purely physical set."
+            "Metal im Dorf, at the heart of Germany, right in the middle of the scene. For five editions I've been shaping the complete visual identity:",
+            "<strong>posters</strong> for the main festival and all side events, <strong>wristbands</strong>, <strong>t-shirts</strong>.",
+            "A newcomer festival carving out its place in the German metal scene year after year. Being part of that growth through my work makes this project something special."
         ],
         "details": {
             "Kunde": "Festival (NDA)",
@@ -118,9 +118,16 @@
             "Tools": "After Effects, Illustrator, Cinema 4D"
         },
         "bilder": [
-            "bilder/stage-1.jpg",
-            "bilder/stage-2.jpg",
-            "bilder/stage-3.jpg"
+            "bilder/mid/mid_i.jpg",
+            "bilder/mid/mid_ii.jpg",
+            "bilder/mid/mid_iii.jpg"
+            "bilder/mid/mid_iv.jpg",
+            "bilder/mid/mid_v.jpg",
+            "bilder/mid/mid_80s.jpg",
+            "bilder/mid/mid_ozzy.jpg",
+            "bilder/mid/mid_acdc.jpg",
+            "bilder/mid/mid_motor.jpg",
+            "bilder/mid/mid_onkelz.jpg"
         ]
     }
 
