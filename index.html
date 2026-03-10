@@ -3909,7 +3909,8 @@
 
         async function ladeProjekte() {
             try {
-                const res = await fetch('projekte.json');
+                const base = window.location.href.replace(/\/[^/]*$/, '/');
+                const res = await fetch(base + 'projekte.json');
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 PROJEKTE = await res.json();
                 renderWorks();
